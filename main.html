@@ -1,170 +1,126 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" 
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Интернет-магазин LevelUp</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <link rel="stylesheet" href="СSS/style.css"/>
-    <link rel="icon" href="img/logo_1.ico" type="image/x-icon" />
-    <title>Интернет-магазин LevelUp</title>
-    <style>
-        .card {
-        transition: transform 0.4s;
-        cursor: pointer; /* чтобы понятно было, что card кликабельна */
-        }
-        .card:hover {
-            transform: scale(1.02);
-        }
-        /* Счетчик на иконке корзины */
-        .cart-icon-container {
-            position: relative;
-            display: inline-block;
-        }
-        .cart-count {
-            position: absolute;
-            top: -5px;
-            right: -10px;
-            background: red;
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 50%;
-        }
-    </style>
+
+  <link rel="stylesheet" href="СSS/style.css" />
+  <link rel="icon" href="img/logo_1.ico" type="image/x-icon" />
 </head>
 <body class="body-top">
-    <!-- Заголовок -->
-    <header class="header">
-        <!-- Навигация -->
-        <nav class="navbar  navbar-dark bg-dark">
-            <div class="container-fluid">
-              <!-- Кнопка бургер -->
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>              
-          
-              <!-- Меню, которое скрывается и раскрывается по бургеру -->
-              <div class="collapse navbar-collapse" id="navbarMenu">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="main.html">Главная страница</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="catalog1.html">Каталоги</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="about.html">О нас</a>
-                  </li>
-              </div>
 
-              <!-- Поиск слева -->
-              <form class="d-flex me-2" role="search">
-                <input class="form-control" type="search" placeholder="Поиск" aria-label="Поиск" />
-              </form>
-          
-              <!-- Центр — название -->
-              <a class="navbar-brand mx-auto" href="main.html">LevelUp</a>
-          
-              <!-- Аккаунт слева от корзины -->
-              <ul class="navbar-nav d-flex flex-row align-items-center mb-2 mb-lg-0">
-                <li class="nav-item me-3">
-                  <a class="nav-link" href="#">Аккаунт</a>
-                </li>
-                <!-- Корзина с иконкой и счетчиком -->
-                <li class="nav-item cart-icon-container" role="button" aria-label="Корзина" tabindex="0" onclick="alert('Перейти в корзину сейчас не реализовано')">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
-                    <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .485.379L2.89 5H14.5a.5.5 0 0 1 .49.598l-1.5 7A.5.5 
-                    0 0 1 13 13H4a.5.5 0 0 1-.491-.408L1.01 2H.5a.5.5 0 0 1-.5-.5zM5 
-                    12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
-                  </svg>
-                  <span class="cart-count" id="cartCount">0</span>
-                </li>
-              </ul>
-            </div>
-          </nav>                   
-    </header>
+  <!-- Заголовок -->
+  <header class="header">
+    <!-- Навигация -->
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <!-- Кнопка бургер -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+          aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- Основной контент -->
-    <main class="container">
-        <br />
-        <div class="card mb-3" id="productCard">
-            <img src="image/im2.png" class="card-img-top" alt="..." />
-            <button type="button" class="btn btn-danger btn-lg mt-3 buy-btn">Предзаказ</button>
-            <div class="card-body">
-                <h5 class="card-title">СТАНЬТЕ ПАЛАЧОМ В СРЕДНЕВЕКОВОЙ ВОЙНЕ С АДОМ</h5>
-                <p class="card-text">
-                    DOOM: The Dark Ages от студии id Software — это зрелищное сказание о легендарном Палаче Рока,
-                    которое поведает предысторию снискавших всемирную известность игр DOOM (2016) и DOOM Eternal.
-                    В третьей части современной серии DOOM игроки вновь наденут броню Палача Рока и прольют реки
-                    крови в мрачной средневековой войне с силами ада, какой ещё не видели.<br />
-                    DOOM: The Dark Ages — новая одиночная кампания в несравненной серии DOOM — на стыке научной
-                    фантастики и тёмного фэнтези. Вас ждут яростные сражения и сногсшибательная графика на основе
-                    движка idTech последнего поколения.
-                </p>
-            </div>
+        <!-- Меню, которое раскрывается по бургеру -->
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="main.html">Главная страница</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog1.html">Каталоги</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">О нас</a>
+            </li>
+          </ul>
         </div>
-        <br />
-    </main>
 
-    <!-- Всплывающее окно -->
-    <div class="modal fade" id="infoModal" aria-labelledby="modalLabel">
-        <div class="modal-dialog modal-lg"> <!-- тут добавлен modal-lg -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Title</h5>
-                </div>
-                <img src="image/im2.png" class="card-img-top" alt="..." />
-                <div class="modal-body" id="modalContent">
-                    Content goes here...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                    <button type="button" class="btn btn-primary" id="preorderBtn">Предзаказ</button>
-                </div>
-            </div>
-        </div>
+        <!-- Поиск слева -->
+        <form class="d-flex me-2" role="search">
+          <input class="form-control" type="search" placeholder="Поиск" aria-label="Поиск" />
+        </form>
+
+        <!-- Центр — название -->
+        <a class="navbar-brand mx-auto" href="main.html">LevelUp</a>
+
+        <!-- Аккаунт слева от корзины -->
+        <ul class="navbar-nav d-flex flex-row align-items-center mb-2 mb-lg-0">
+          <li class="nav-item me-3">
+            <a class="nav-link" href="#">Аккаунт</a>
+          </li>
+          <!-- Корзина с иконкой и счетчиком -->
+          <li class="nav-item cart-icon-container" role="button" aria-label="Корзина" tabindex="0"
+            onclick="alert('Перейти в корзину сейчас не реализовано')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-cart"
+              viewBox="0 0 16 16">
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .485.379L2.89 5H14.5a.5.5 0 0 1 .49.598l-1.5 7A.5.5 
+              0 0 1 13 13H4a.5.5 0 0 1-.491-.408L1.01 2H.5a.5.5 0 0 1-.5-.5zM5 
+              12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
+            </svg>
+            <span class="cart-count" id="cartCount">0</span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Основной контент -->
+  <main class="container">
+    <br />
+    <div class="card mb-3" id="productCard">
+      <img src="image/im2.png" class="card-img-top" alt="..." />
+      <button type="button" class="btn btn-danger btn-lg mt-3 buy-btn">Предзаказ</button>
+      <div class="card-body">
+        <h5 class="card-title">СТАНЬТЕ ПАЛАЧОМ В СРЕДНЕВЕКОВОЙ ВОЙНЕ С АДОМ</h5>
+        <p class="card-text">
+          DOOM: The Dark Ages от студии id Software — это зрелищное сказание о легендарном Палаче Рока,
+          которое поведает предысторию снискавших всемирную известность игр DOOM (2016) и DOOM Eternal.
+          В третьей части современной серии DOOM игроки вновь наденут броню Палача Рока и прольют реки
+          крови в мрачной средневековой войне с силами ада, какой ещё не видели.<br />
+          DOOM: The Dark Ages — новая одиночная кампания в несравненной серии DOOM — на стыке научной
+          фантастики и тёмного фэнтези. Вас ждут яростные сражения и сногсшибательная графика на основе
+          движка idTech последнего поколения.
+        </p>
+      </div>
     </div>
+    <br />
+  </main>
 
-    <footer class="footer">
-        <div class="row"><div class="col"></div></div>
-    </footer>
+  <!-- Всплывающее окно -->
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg"> <!-- тут добавлен modal-lg -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <img src="image/im2.png" class="card-img-top" alt="..." />
+        <div class="modal-body" id="modalContent">
+          Content goes here...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          <button type="button" class="btn btn-primary" id="preorderBtn">Предзаказ</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script>
-        // Для хранения количества в корзине
-        let cartCount = 0;
-        const cartCountElem = document.getElementById('cartCount');
+  <footer class="footer">
+    <div class="row">
+      <div class="col"></div>
+    </div>
+  </footer>
 
-        // Кнопка купить - добавляем товар в корзину
-        document.querySelector('.buy-btn').addEventListener('click', () => {
-            cartCount++;
-            cartCountElem.textContent = cartCount;
-        });
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
-        // Клик по карточке открывает модальное окно с контентом карточки
-        document.getElementById('productCard').addEventListener('click', function(e) {
-            // Игнорируем если клик по кнопке купить (чтобы не открывать модалку при покупке)
-            if (e.target.classList.contains('buy-btn')) return;
-
-            const modalLabel = document.getElementById('modalLabel');
-            const modalContent = document.getElementById('modalContent');
-            modalLabel.textContent = this.querySelector('.card-title').textContent;
-            modalContent.textContent = this.querySelector('.card-text').textContent;
-
-            const modal = new bootstrap.Modal(document.getElementById('infoModal'));
-            modal.show();
-        });
-
-        // Кнопка предзаказ в модальном окне добавляет товар в корзину и закрывает окно
-        document.getElementById('preorderBtn').addEventListener('click', () => {
-            cartCount++;
-            cartCountElem.textContent = cartCount;
-            bootstrap.Modal.getInstance(document.getElementById('infoModal')).hide();
-        });
-    </script>
 </body>
 </html>

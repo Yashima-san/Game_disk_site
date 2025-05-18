@@ -6,45 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEVELUP Online Store</title>
     <!-- Bootstrap CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Счетчик на иконке корзины */
-        .cart-icon-container {
-            position: relative;
-            display: inline-block;
-        }
-        .cart-count {
-            position: absolute;
-            top: -5px;
-            right: -10px;
-            background: red;
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 50%;
-        }
-        .cta-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .footer {
-            background-color: #343a40;
-            color: white;
-            padding: 30px 0;
-        }
-        .footer a {
-            color: white;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="СSS/style.css" />
+    <link rel="icon" href="img/logo_1.ico" type="image/x-icon" />
+    <title>Интернет-магазин LevelUp</title>
 </head>
 <body class="body-top">
     <!-- Main Header Section -->
@@ -162,53 +129,9 @@
             <p>Игры по дешевой цене</p>
         </section>
     </footer>
-
-    <script>
-        // Для хранения количества в корзине
-        let cartCount = 0;
-        const cartCountElem = document.getElementById('cartCount');
-
-        // Кнопка купить - добавляем товар в корзину
-        document.querySelector('.buy-btn').addEventListener('click', () => {
-            cartCount++;
-            cartCountElem.textContent = cartCount;
-        });
-
-        // Кнопка предзаказ в модальном окне добавляет товар в корзину и закрывает окно
-        document.getElementById('preorderBtn').addEventListener('click', () => {
-            cartCount++;
-            cartCountElem.textContent = cartCount;
-            bootstrap.Modal.getInstance(document.getElementById('infoModal')).hide();
-        });
-
-        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // предотвращаем отправку формы
-        
-        const feedbackInput = this.querySelector('input[type="text"]');
-        const feedbackAlert = document.getElementById('feedbackAlert');
-        
-        const feedbackText = feedbackInput.value.trim();
-        if (feedbackText === '') {
-            alert('Пожалуйста, введите отзыв перед отправкой.');
-            return;
-    }
-        // Здесь можешь вставить свой AJAX-запрос, если нужен. Для демо — просто симулируем отправку.
-        // Очистим поле ввода
-        feedbackInput.value = '';
-
-        // Показываем плашку с сообщением
-        feedbackAlert.style.display = 'block';
-
-        // Автоматически скрываем плашку через 3 секунды
-        setTimeout(() => {
-            feedbackAlert.style.display = 'none';
-        }, 3000);
-
-        // Показываем модальное окно с успешной отправкой
-        const feedbackModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
-        feedbackModal.show();
-    });
-    
-    </script>
+<!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  
 </body>
 </html>
