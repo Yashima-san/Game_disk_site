@@ -8,6 +8,22 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* Счетчик на иконке корзины */
+        .cart-icon-container {
+            position: relative;
+            display: inline-block;
+        }
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 50%;
+        }
         .cta-button {
             background-color: #007bff;
             color: white;
@@ -127,5 +143,23 @@
     <!-- Bootstrap JS & Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        // Для хранения количества в корзине
+        let cartCount = 0;
+        const cartCountElem = document.getElementById('cartCount');
+
+        // Кнопка купить - добавляем товар в корзину
+        document.querySelector('.buy-btn').addEventListener('click', () => {
+            cartCount++;
+            cartCountElem.textContent = cartCount;
+        });
+
+        // Кнопка предзаказ в модальном окне добавляет товар в корзину и закрывает окно
+        document.getElementById('preorderBtn').addEventListener('click', () => {
+            cartCount++;
+            cartCountElem.textContent = cartCount;
+            bootstrap.Modal.getInstance(document.getElementById('infoModal')).hide();
+        });
+    </script>
 </body>
 </html>
