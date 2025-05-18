@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEVELUP Online Store</title>
     <!-- Bootstrap CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Счетчик на иконке корзины */
@@ -98,7 +99,7 @@
           </nav>  
     </header>
     <!-- About Us Section -->
-    <section class="blocking container py-5">
+    <section class="container py-5">
         <h2>О Нас</h2>
         <p>LEVELUP - это онлайн-магазин игровых дисков 
             для PlayStation 5, предлагающий широкий 
@@ -108,6 +109,11 @@
             наслаждаться любимыми играми без лишних 
             хлопот.</p>
     </section>
+
+    <!-- Над формой отзыва добавим плашку для сообщений -->
+    <div id="feedbackAlert" class="alert alert-success" role="alert" style="display:none; margin-bottom: 1rem;">
+        Спасибо за ваш отзыв!
+    </div>
 
     <!-- Footer Section -->
     <footer class="footer">
@@ -129,20 +135,34 @@
         </div>
         <!-- Subscription Section -->
         <section class="container py-4">
-            <h2>Подпишитесь на Новости</h2>
-            <p>Будьте в курсе последних новинок и предложений!</p>
-            <form action="#">
+            <h3>Напишите свой отзыв</h3>
+            <!-- Форма отзыва -->
+            <form id="feedbackForm" action="#">
                 <div class="input-group">
-                    <input type="email" class="form-control" placeholder="Введите ваш email" required>
-                    <button class="btn btn-primary" type="submit">Подписаться</button>
+                    <input type="text" class="form-control" placeholder="Введите ваш отзыв" required />
+                    <button class="btn btn-primary" type="submit">Отправить</button>
                 </div>
             </form>
+            <!-- Модальное окно об успешной отправке отзыва -->
+            <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="feedbackModalLabel">Отзыв отправлен</h5>
+                </div>
+                <div class="modal-body">
+                    Спасибо за ваш отзыв! Мы очень ценим ваше мнение.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+                </div>
+            </div>
+            </div>           
+            <p>Игры по дешевой цене</p>
         </section>
     </footer>
 
-    <!-- Bootstrap JS & Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script>
         // Для хранения количества в корзине
         let cartCount = 0;
@@ -160,6 +180,35 @@
             cartCountElem.textContent = cartCount;
             bootstrap.Modal.getInstance(document.getElementById('infoModal')).hide();
         });
+
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // предотвращаем отправку формы
+        
+        const feedbackInput = this.querySelector('input[type="text"]');
+        const feedbackAlert = document.getElementById('feedbackAlert');
+        
+        const feedbackText = feedbackInput.value.trim();
+        if (feedbackText === '') {
+            alert('Пожалуйста, введите отзыв перед отправкой.');
+            return;
+    }
+        // Здесь можешь вставить свой AJAX-запрос, если нужен. Для демо — просто симулируем отправку.
+        // Очистим поле ввода
+        feedbackInput.value = '';
+
+        // Показываем плашку с сообщением
+        feedbackAlert.style.display = 'block';
+
+        // Автоматически скрываем плашку через 3 секунды
+        setTimeout(() => {
+            feedbackAlert.style.display = 'none';
+        }, 3000);
+
+        // Показываем модальное окно с успешной отправкой
+        const feedbackModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
+        feedbackModal.show();
+    });
+
     </script>
 </body>
 </html>
