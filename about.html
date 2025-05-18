@@ -1,189 +1,98 @@
+
 <!DOCTYPE html>
 <html lang="ru">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="СSS/style.css"/>
-    <link rel="icon" href="img/logo_1.ico" type="image/x-icon" />
-    <title>Интернет-магазин LevelUp</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVELUP Online Store</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .card {
-        transition: transform 0.4s;
-        cursor: pointer; /* чтобы понятно было, что card кликабельна */
+        body {
+            font-family: Arial, sans-serif;
         }
-        .card:hover {
-            transform: scale(1.02);
+        .main-header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #f8f9fa;
         }
-        /* Счетчик на иконке корзины */
-        .cart-icon-container {
-            position: relative;
-            display: inline-block;
+        .main-header h1 {
+            font-size: 3em;
         }
-        .cart-count {
-            position: absolute;
-            top: -5px;
-            right: -10px;
-            background: red;
+        .cta-button {
+            background-color: #007bff;
             color: white;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 50%;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 0;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
-<body class="body-top">
-    <!-- Заголовок -->
-    <header class="header">
-        <!-- Навигация -->
-        <nav class="navbar  navbar-dark bg-dark">
-            <div class="container-fluid">
-              <!-- Кнопка бургер -->
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>              
-          
-              <!-- Меню, которое скрывается и раскрывается по бургеру -->
-              <div class="collapse navbar-collapse" id="navbarMenu">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="main.html">Главная страница</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Каталоги</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="about.html">О нас</a>
-                  </li>
-              </div>
+<body>
 
-              <!-- Поиск слева -->
-              <form class="d-flex me-2" role="search">
-                <input class="form-control" type="search" placeholder="Поиск" aria-label="Поиск" />
-              </form>
-          
-              <!-- Центр — название -->
-              <a class="navbar-brand mx-auto" href="main.html">LevelUp</a>
-          
-              <!-- Аккаунт слева от корзины -->
-              <ul class="navbar-nav d-flex flex-row align-items-center mb-2 mb-lg-0">
-                <li class="nav-item me-3">
-                  <a class="nav-link" href="#">Аккаунт</a>
-                </li>
-                <!-- Корзина с иконкой и счетчиком -->
-                <li class="nav-item cart-icon-container" role="button" aria-label="Корзина" tabindex="0" onclick="alert('Перейти в корзину сейчас не реализовано')">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
-                    <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .485.379L2.89 5H14.5a.5.5 0 0 1 .49.598l-1.5 7A.5.5 
-                    0 0 1 13 13H4a.5.5 0 0 1-.491-.408L1.01 2H.5a.5.5 0 0 1-.5-.5zM5 
-                    12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
-                  </svg>
-                  <span class="cart-count" id="cartCount">0</span>
-                </li>
-              </ul>
-            </div>
-          </nav>                   
+    <!-- Main Header Section -->
+    <header class="main-header">
+        <h1>LEVELUP - Онлайн Магазин Игровых Дисков</h1>
+        <p>Широкий ассортимент игр для PlayStation 5 по конкурентным ценам</p>
+        <a href="#contact" class="cta-button">Напишите свой отзыв</a>
     </header>
 
-  <!-- Регистрация -->
-  <section class="container my-5">
-    <h2 class="mb-4">Регистрация</h2>
-    <form>
-      <div class="mb-3">
-        <label for="email" class="form-label">Электронная почта</label>
-        <input type="email" class="form-control" id="email" placeholder="you@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Пароль</label>
-        <input type="password" class="form-control" id="password">
-      </div>
-      <div class="mb-3">
-        <label for="confirm-password" class="form-label">Подтвердить пароль</label>
-        <input type="password" class="form-control" id="confirm-password">
-      </div>
-      <div class="form-check mb-3">
-        <input type="checkbox" class="form-check-input" id="terms">
-        <label class="form-check-label" for="terms">Я соглашаюсь на <a href="#">публичную оферту</a></label>
-      </div>
-      <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-    </form>
-  </section>
+    <!-- About Us Section -->
+    <section class="container py-5">
+        <h2>О Нас</h2>
+        <p>LEVELUP - это онлайн-магазин игровых дисков для PlayStation 5, предлагающий широкий ассортимент оригинальных игр по конкурентным ценам. Мы заботимся о качестве и быстром обслуживании, чтобы каждый геймер мог наслаждаться любимыми играми без лишних хлопот.</p>
+    </section>
 
-  <!-- Товары -->
-  <section class="container my-5">
-    <h2 class="mb-4">Популярные игры</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="PATH/TO/assassins.jpg" class="card-img-top" alt="Assassin's Creed">
-          <div class="card-body">
-            <h5 class="card-title">Assassins Creed Shadows</h5>
-            <p class="card-text">4 299 ₽</p>
-            <a href="#" class="btn btn-success">Купить</a>
-          </div>
+    <!-- Services Section -->
+    <section class="container py-5">
+        <h2>Услуги</h2>
+        <ul>
+            <li>Устойчивость</li>
+            <li>Контакты</li>
+            <li>Часто задаваемые вопросы (FAQ)</li>
+            <li>Карьера</li>
+            <li>Политика конфиденциальности</li>
+            <li>Права на конфиденциальность в Калифорнии</li>
+            <li>Условия использования</li>
+        </ul>
+    </section>
+
+    <!-- Subscription Section -->
+    <section class="container py-5">
+        <h2>Подпишитесь на Новости</h2>
+        <p>Будьте в курсе последних новинок и предложений!</p>
+        <form action="#">
+            <div class="input-group">
+                <input type="email" class="form-control" placeholder="Введите ваш email" required>
+                <button class="btn btn-primary" type="submit">Подписаться</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>© 2025 dae. Все права защищены.</p>
+            <p>Разработчики: Богуш Алина, Аранина Ангелина</p>
+            <a href="#contact">Контакты</a> | 
+            <a href="#terms">Условия использования</a>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="PATH/TO/dmc5.jpg" class="card-img-top" alt="Devil May Cry 5">
-          <div class="card-body">
-            <h5 class="card-title">Devil May Cry 5</h5>
-            <p class="card-text">799 ₽</p>
-            <a href="#" class="btn btn-success">Купить</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="PATH/TO/atomic-heart.jpg" class="card-img-top" alt="Atomic Heart">
-          <div class="card-body">
-            <h5 class="card-title">Atomic Heart</h5>
-            <p class="card-text">3 192 ₽</p>
-            <a href="#" class="btn btn-success">Купить</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <p class="mb-1">© 2025 LevelUp. Все права защищены.</p>
-    <small>Разработано Богуш Алиной и Араниной Ангелиной</small>
-  </footer>
-
-  <script>
-    // Для хранения количества в корзине
-    let cartCount = 0;
-    const cartCountElem = document.getElementById('cartCount');
-
-    // Кнопка купить - добавляем товар в корзину
-    document.querySelector('.buy-btn').addEventListener('click', () => {
-        cartCount++;
-        cartCountElem.textContent = cartCount;
-    });
-
-    // Клик по карточке открывает модальное окно с контентом карточки
-    document.getElementById('productCard').addEventListener('click', function(e) {
-        // Игнорируем если клик по кнопке купить (чтобы не открывать модалку при покупке)
-        if (e.target.classList.contains('buy-btn')) return;
-
-        const modalLabel = document.getElementById('modalLabel');
-        const modalContent = document.getElementById('modalContent');
-        modalLabel.textContent = this.querySelector('.card-title').textContent;
-        modalContent.textContent = this.querySelector('.card-text').textContent;
-
-        const modal = new bootstrap.Modal(document.getElementById('infoModal'));
-        modal.show();
-    });
-
-    // Кнопка предзаказ в модальном окне добавляет товар в корзину и закрывает окно
-    document.getElementById('preorderBtn').addEventListener('click', () => {
-        cartCount++;
-        cartCountElem.textContent = cartCount;
-        bootstrap.Modal.getInstance(document.getElementById('infoModal')).hide();
-    });
-</script>
+    <!-- Bootstrap JS & Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
