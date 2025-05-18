@@ -46,10 +46,9 @@
         }
     </style>
 </head>
-<body>
-
+<body class="body-top">
     <!-- Main Header Section -->
-    <header class="main-header">
+    <header class="header">
         <!-- Навигация -->
         <nav class="navbar  navbar-dark bg-dark">
             <div class="container-fluid">
@@ -96,20 +95,21 @@
                 </li>
               </ul>
             </div>
-          </nav>  
+          </nav>                  
     </header>
-    <!-- About Us Section -->
-    <section class="container py-5">
-        <h2>О Нас</h2>
-        <p>LEVELUP - это онлайн-магазин игровых дисков 
-            для PlayStation 5, предлагающий широкий 
-            ассортимент оригинальных игр по конкурентным 
-            ценам. Мы заботимся о качестве и быстром 
-            обслуживании, чтобы каждый геймер мог 
-            наслаждаться любимыми играми без лишних 
-            хлопот.</p>
-    </section>
-
+    <main class="container">
+        <!-- About Us Section -->
+        <section class="containerl py-5">
+            <h2>О Нас</h2>
+            <p>LEVELUP - это онлайн-магазин игровых дисков 
+                для PlayStation 5, предлагающий широкий 
+                ассортимент оригинальных игр по конкурентным 
+                ценам. Мы заботимся о качестве и быстром 
+                обслуживании, чтобы каждый геймер мог 
+                наслаждаться любимыми играми без лишних 
+                хлопот.</p>
+        </section>
+    </main>
     <!-- Над формой отзыва добавим плашку для сообщений -->
     <div id="feedbackAlert" class="alert alert-success" role="alert" style="display:none; margin-bottom: 1rem;">
         Спасибо за ваш отзыв!
@@ -208,7 +208,7 @@
         const feedbackModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
         feedbackModal.show();
     });
-
+    
     </script>
 </body>
 </html>
