@@ -6,17 +6,19 @@ body {
   color: white; /* белый текст по умолчанию */
 }
 
-.navbar-dark.bg-dark {
+header .navbar-dark{
   background-color: #000 !important;
   color: white;
 }
 
-.navbar-dark .navbar-nav .nav-link {
+.modal-content {
+  padding-top: 40px;
+  background-color: #000 !important;
   color: white !important;
 }
 
-.footer, .modal-content {
-  padding-top: 40px;
+footer{
+  padding: 10px;
   background-color: #000 !important;
   color: white !important;
 }
