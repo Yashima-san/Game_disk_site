@@ -19,24 +19,4 @@ document.addEventListener('DOMContentLoaded', () => {
       cartCountElem.textContent = cartCount;
     }
   });
-
-  // При клике на карточку (не на кнопку) — открываем модалку с описанием
-  document.getElementById('productCard').addEventListener('click', function (e) {
-    if (e.target.classList.contains('buy-btn')) return;
-
-    const modalLabel = document.getElementById('modalLabel');
-    const modalContent = document.getElementById('modalContent');
-    modalLabel.textContent = this.querySelector('.card-title').textContent;
-    modalContent.textContent = this.querySelector('.card-text').textContent;
-
-    const modal = new bootstrap.Modal(document.getElementById('infoModal'));
-    modal.show();
-  });
-
-  // кнопка "Предзаказ" в модальном — просто увеличиваем корзину
-  document.getElementById('preorderBtn').addEventListener('click', () => {
-    cartCount++;
-    cartCountElem.textContent = cartCount;
-    bootstrap.Modal.getInstance(document.getElementById('infoModal')).hide();
-  });
 });
