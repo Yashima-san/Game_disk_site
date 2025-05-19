@@ -11,17 +11,18 @@ header .navbar-dark{
   color: white;
 }
 
+footer{
+  padding: 15px;
+  background-color: #000 !important;
+  color: white !important;
+}
+
 .modal-content {
   padding-top: 40px;
   background-color: #000 !important;
   color: white !important;
 }
 
-footer{
-  padding: 10px;
-  background-color: #000 !important;
-  color: white !important;
-}
 
 /* Счетчик на иконке корзины */
 .cart-icon-container {
