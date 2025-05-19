@@ -1,3 +1,6 @@
+html{
+  
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -52,4 +55,11 @@ footer{
 
 .card:hover {
   transform: scale(1.02);
+}
+
+#body-fon {
+  background-image: url('../image/fon.png');
+  background-repeat: no-repeat;
+  background-size: cover; /* или contain, в зависимости от желаемого эффекта */
+  background-position: center;
 }
