@@ -9,7 +9,6 @@ body {
 
 header .navbar-dark{
   background-color: #000 !important;
-  color: white;
 }
 
 .containerl{
@@ -52,9 +51,9 @@ header .navbar-dark{
 }
 
 footer{
-  padding: 25px;
+  padding: 30px;
   background-color: #000 !important;
-  color: white !important;
+  color: #ff7f50 !important;
   display: flex;
   min-height: 40vh;
   flex-direction: column;
@@ -65,7 +64,6 @@ footer{
   background-color: #000 !important;
   color: white !important;
 }
-
 
 /* Счетчик на иконке корзины */
 .cart-icon-container {
@@ -102,4 +100,90 @@ footer{
   background-repeat: no-repeat;
   background-size: cover; /* или contain, в зависимости от желаемого эффекта */
   background-position: center;
+}
+
+/* Контейнер для центрирования плашки */
+.banner-container {
+  display: flex;
+  justify-content: center; /* Центрировать по горизонтали */
+  width: 100%; /* На всю ширину страницы */
+  margin-top: 20px; /* Отступ сверху, чтобы было чуть ближе к верху */
+}
+
+/* Стиль для темной плашки */
+.promo-banner-dark {
+  background-color: #000; /* стандартная темная тема Bootstrap */
+  padding: 15px;
+  cursor: pointer;
+  font-size: 1.2rem;
+   border-radius: 10px; /* скругление углов */
+   width: 800px; /* фиксированная ширина для урезания */
+
+  /* Центрирование содержимого внутри плашки */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Для размещения слов в строку с пробелами */
+  flex-wrap: nowrap;
+}
+
+/* Стиль для текста категорий */
+.category-text {
+  position: relative; /* для позиционирования псевдоэлемента */
+  color: #ff7f50; /* коралловый цвет по умолчанию */
+  margin: 0 10px; /* пространство между словами */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Создаем линию снизу, которая появляется при наведении */
+.category-text::after {
+  content: "";
+  position: absolute;
+  bottom: -4px; /* чуть ниже текста, чтобы было видно линию */
+  left: 0;
+  width: 100%;
+  height: 3px; /* толщина линии */
+  background-color: #ff7f50; /* коралловый цвет линии */
+
+  /* Изначально линия скрыта */
+  opacity:0;
+
+   /* Плавное появление линии */
+   transition: opacity .3s ease;
+}
+
+/* При наведении на слово — показываем линию снизу */
+.category-text:hover::after {
+   opacity:1;
+}
+
+/* Сделать изображение растянутым на весь экран и скруглить углы на 10% */
+.img-fullscreen {
+  width: 30vw; /* ширина окна браузера */
+  height: 50vh; /* высота окна браузера */
+  object-fit: contain; /* сохраняет пропорции, не обрезая изображение */
+  border-radius: 10%; /* скругление углов на 10% от размеров изображения */
+}
+
+.images-container {
+  margin-bottom: 30px;
+}
+/* Коралловый стиль для кнопок "Купить" */
+.btn-coral {
+  background-color: #ff7f50; /* коралловый цвет */
+  border-color: #ff7f50;
+}
+
+.btn-coral:hover {
+  background-color: #ff6347; /* более насыщенный при наведении */
+  border-color: #ff6347;
+}
+.btn-coral {
+  color: #ffffff !important;
+}
+/* Для мини-картинок внутри модальных окон */
+.modal-content img {
+  max-width: 100px;
 }

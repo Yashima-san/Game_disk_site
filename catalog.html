@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Интернет-магазин LevelUp</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="image/logo_1.ico" type="image/x-icon" />
+</head>
+<body class="body-top">
+  <header class="header">
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+          aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="main.html">Главная страница</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">Каталоги</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+          </ul>
+        </div>
+
+        <form class="d-flex me-2" role="search">
+          <input class="form-control" type="search" placeholder="Поиск" aria-label="Поиск" />
+        </form>
+
+        <a class="navbar-brand mx-auto" href="main.html">LevelUp</a>
+
+        <ul class="navbar-nav d-flex flex-row align-items-center mb-2 mb-lg-0">
+          <li class="nav-item me-3">
+            <a class="nav-link" href="reg.html">Аккаунт</a></li>
+          <li class="nav-item cart-icon-container" role="button" aria-label="Корзина" tabindex="0"
+            onclick="alert('Перейти в корзину сейчас не реализовано')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .485.379L2.89 5H14.5a.5.5 0 0 1 .49.598l-1.5 
+              7A.5.5 0 0 1 13 13H4a.5.5 0 0 1-.491-.408L1.01 2H.5a.5.5 0 0 1-.5-.5zM5 
+              12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+            </svg>
+            <span class="cart-count" id="cartCount">0</span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <br>
+<!-- Обертка для центрирования -->
+<div class="banner-container">
+    <div class="promo-banner-dark" role="button" onclick="window.location.href='target_page.html'">
+        <span class="category-text">Экшен</span>
+        <span class="category-text">Спорт</span>
+        <span class="category-text">Шутер</span>
+        <span class="category-text">Хоррор</span>
+        <span class="category-text">Гонки</span>
+    </div>
+</div>
+
+
+<!-- Контейнер с картинками -->
+<div class="images-container d-flex justify-content-center gap-3 my-4">
+  <!-- Первая картинка -->
+  <div class="image-item">
+    <img src="https://c.dns-shop.ru/thumb/st4/fit/320/250/d285a459acbef56adcf5b52ce097fab5/56deb9d2b76d4423e652e004e22d3580dc952fa5a91f93625dde27c92ddeb7d3.jpg" alt="Описание 1" class="img-fullscreen" data-bs-toggle="modal" data-bs-target="#modal1">
+  </div>
+  <!-- Вторая картинка -->
+  <div class="image-item">
+    <img src="https://c.dns-shop.ru/thumb/st1/fit/320/250/a99a5fa8e28f8d0aac84b0895e2c126f/1ac364aceee97bd2e9820dcce0f676dd98b75103d523d9067221a9a69c307ff6.jpg" alt="Описание 2" class="img-fullscreen" data-bs-toggle="modal" data-bs-target="#modal2">
+  </div>
+  <!-- Третья картинка -->
+  <div class="image-item">
+    <img src="https://c.dns-shop.ru/thumb/st1/fit/320/250/2e1f908aea7e92696ef979d2aad288c8/51769f3842490d9672eef5e96fc417290ebdf4a6627c32256a265246cbeb302e.jpg" alt="Описание 3" class="img-fullscreen" data-bs-toggle="modal" data-bs-target="#modal3">
+  </div>
+</div>
+
+<!-- Модальные окна -->
+<!-- Модальное окно для первой картинки -->
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3 bg-dark text-white rounded-3">
+      <button type="button" class="btn-close align-self-end mb-2" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      <div class="d-flex flex-column align-items-center text-center">
+        <img src="https://c.dns-shop.ru/thumb/st4/fit/320/250/d285a459acbef56adcf5b52ce097fab5/56deb9d2b76d4423e652e004e22d3580dc952fa5a91f93625dde27c92ddeb7d3.jpg" alt="Мини картинка 1" class="mb-3 rounded">
+        <p>Assassin’s Creed Mirage
+Откройте мир Assassin's Creed Mirage и погрузитесь в увлекательные приключения в древнем Багдаде. Возьмите на себя роль Баси?ма, искусного воина и мастера паркура, чтобы раскрыть тайны и сразиться с врагами. Отличная графика, захватывающий сюжет и динамичный геймплей ждут вас. Закажите Assassin's Creed Mirage на площадке Plati.Market по выгодной цене и ощутите настоящую атмосферу восточного мира!</p>
+        <button class='btn btn-coral'>Купить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Аналогично для других модальных окон -->
+<div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class='modal-content p-3 bg-dark text-white rounded-3'>
+      <button type='button' class='btn-close align-self-end mb-2' data-bs-dismiss='modal' aria-label='Закрыть'></button>
+      <div class='d-flex flex-column align-items-center text-center'>
+        <img src='https://c.dns-shop.ru/thumb/st1/fit/320/250/a99a5fa8e28f8d0aac84b0895e2c126f/1ac364aceee97bd2e9820dcce0f676dd98b75103d523d9067221a9a69c307ff6.jpg' alt='Мини картинка 2' class='mb-3 rounded'>
+        <p>Devil May Cry 5 — динамичный слэшер от Capcom, в котором вы управляете Неро, Данте и загадочным Ви. Сразитесь с армией демонов в эпичной истории, полной зрелищных комбо, мощных приемов и фирменного стиля серии. Великолепная графика на RE Engine, драйвовый саундтрек и захватывающий геймплей делают игру обязательной к прохождению. Доступна для ПК, PS4 и Xbox One — оформите заказ уже сегодня!</p>
+        <button class='btn btn-coral'>Купить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='modal fade' id='modal3' tabindex='-1' aria-labelledby='modalLabel3' aria-hidden='true'>
+  <div class='modal-dialog modal-dialog-centered'>
+    <div class='modal-content p-3 bg-dark text-white rounded-3'>
+      <button type='button' class='btn-close align-self-end mb-2' data-bs-dismiss='modal' aria-label='Закрыть'></button>
+      <div class='d-flex flex-column align-items-center text-center'>
+        <img src='https://c.dns-shop.ru/thumb/st1/fit/320/250/2e1f908aea7e92696ef979d2aad288c8/51769f3842490d9672eef5e96fc417290ebdf4a6627c32256a265246cbeb302e.jpg' alt='Мини картинка 3' class='mb-3 rounded'>
+        <p>Atomic heart - История альтернативной реальности 1950-х годов. Игровой мир не так уж далёк от идеалов, за которые человечество борется сегодня. Счастливое общество, превосходство науки, идеальные города с залитыми солнцем зелёными парками и площадями, автоматизация повседневной жизни и стремление к звёздам. Всё это мы можем получить в ближайшем будущем. Но стоит ли нам взглянуть на обратную сторону идеального мира? Могло ли что-то подобное уже произойти? И к чему это может привести?</p>
+        <button class='btn btn-coral'>Купить</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Section -->
+    <footer class='footer pt-2'>
+      <br>
+        <div class='container'>
+            <!-- Колонки с пунктами (убраны пункты, оставлены слова) -->
+            <div class='row'>
+                <!-- Первая колонка -->
+                <div class='col-md-4 mb-3'>
+                    <ul class='list-unstyled'>
+                        <li>Sustainability</li>
+                        <li>Contact Us</li>
+                        <li>FAQ</li>
+                        <li>Careers</li>
+                    </ul>
+                </div>
+
+                <!-- Вторая колонка -->
+                <div class='col-md-4 mb-3'>
+                    <ul class='list-unstyled'>
+                        <li>Privacy Policy</li>
+                        <li>CA Privacy Rights</li>
+                        <li>Terms of Use</li>
+                        <li>Newsletter</li>
+                    </ul>
+                </div>
+
+                <!-- Третья колонка: форма отзывов -->
+                <div class='col-md-4 mb-3'>
+                    <!-- Форма отзыва -->
+                    <h3>Напишите свой отзыв</h3>
+                    <form id='feedbackForm' action='#'>
+                        <div class='input-group mb-3'>
+                          <input type='text' class='form-control' placeholder='Введите ваш отзыв' required />
+                          <button class='btn btn-primary' type='submit'>Отправить</button>
+                          </div>
+                        <!-- Можно добавить параграф под формой, если нужно -->
+                        <p>Игры по дешевой цене</p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Вторая строка с копирайтом -->
+            <div class='row mt-3'>
+                <div class='col'>
+                    &copy;2025 dae. Все права защищены.
+                </div>
+            </div>
+        </div>
+  <!-- Подключение Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+  <!-- Подключение твоего скрипта -->
+  <script src="js/script.js"></script>
+</body>
+</html>
