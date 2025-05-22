@@ -1,0 +1,4 @@
+CREATE TABLE feedback (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    review TEXT NOT NULL
+);

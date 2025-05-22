@@ -90,28 +90,29 @@ window.addEventListener('DOMContentLoaded', () => {
   showCategory(defaultCategory);
 });
 
-document.getElementById('reviewForm').addEventListener('submit', function(e) {
-  e.preventDefault(); // Предотвращаем стандартную отправку формы
+document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+  e.preventDefault(); // Отменяем стандартную отправку формы
 
-  const reviewInput = this.querySelector('input[name="review"]');
-  const reviewText = reviewInput.value;
+  const form = e.target;
+  const formData = new FormData(form);
 
-  // Отправляем отзыв на сервер через fetch (AJAX)
-  fetch('/submit_review', {
+  fetch('save_feedback.php', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ review: reviewText })
+    body: formData
   })
-  .then(response => response.json())
-  .then(data => {
-    // Обработка ответа сервера
-    alert('Отзыв успешно отправлен!');
-    reviewInput.value = ''; // Очистить поле после отправки
+  .then(response => {
+    if (response.ok) {
+      // Показать модальное окно
+      document.getElementById('modal').style.display = 'block';
+      // Сбросить форму
+      form.reset();
+    } else {
+      alert('Ошибка при отправке отзыва');
+    }
   })
-  .catch(error => {
-    console.error('Ошибка:', error);
-    alert('Произошла ошибка при отправке отзыва.');
-  });
+  .catch(() => alert('Ошибка сети'));
+});
+
+document.getElementById('closeModal').addEventListener('click', function() {
+  document.getElementById('modal').style.display = 'none';
 });
