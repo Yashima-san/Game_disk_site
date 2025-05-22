@@ -89,33 +89,3 @@ window.addEventListener('DOMContentLoaded', () => {
   const defaultCategory = Object.keys(categoriesData)[0];
   showCategory(defaultCategory);
 });
-
-const form = document.getElementById('feedbackForm');
-  const modal = document.getElementById('modal');
-  const closeModal = document.getElementById('closeModal');
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault(); // отменяем стандартную отправку формы
-
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-      if (data.trim() === "OK") {
-        modal.style.display = 'block'; // показываем модальное окно
-        form.reset();
-      } else {
-        alert("Ошибка: " + data);
-      }
-    })
-    .catch(() => alert("Ошибка сети"));
-  });
-
-  closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-    location.reload(); // обновляем страницу при закрытии окна
-  });
