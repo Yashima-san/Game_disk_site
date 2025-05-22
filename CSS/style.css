@@ -20,10 +20,18 @@ header .navbar-dark{
 
 .form1{
   background-color: #1E1E1E;
-  color: #9d9d9d;
-  border: 0;
+  color: #c7c7c7;
   margin-left: 10px;
   width: 360px;
+  border: 0;
+}
+
+.form2{
+  background-color: #000000;
+  color: #c7c7c7;
+  border: 1;
+  border-color: #ff7f50;
+  border-radius: 0;
 }
 
 .image-item{
