@@ -1,6 +1,12 @@
 <?php
 try {
-    $db = new PDO('sqlite:feedback.db'); // Путь к файлу вашей SQLite базы
+    $db = new PDO('sqlite:feedback.db');
+
+    // Создание таблицы, если не существует (выполнится один раз)
+    $db->exec("CREATE TABLE IF NOT EXISTS feedback (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        review TEXT NOT NULL
+    )");
 
     if (!empty($_POST['review'])) {
         $review = $_POST['review'];

@@ -90,29 +90,32 @@ window.addEventListener('DOMContentLoaded', () => {
   showCategory(defaultCategory);
 });
 
-document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-  e.preventDefault(); // Отменяем стандартную отправку формы
+const form = document.getElementById('feedbackForm');
+  const modal = document.getElementById('modal');
+  const closeModal = document.getElementById('closeModal');
 
-  const form = e.target;
-  const formData = new FormData(form);
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // отменяем стандартную отправку формы
 
-  fetch('save_feedback.php', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => {
-    if (response.ok) {
-      // Показать модальное окно
-      document.getElementById('modal').style.display = 'block';
-      // Сбросить форму
-      form.reset();
-    } else {
-      alert('Ошибка при отправке отзыва');
-    }
-  })
-  .catch(() => alert('Ошибка сети'));
-});
+    const formData = new FormData(form);
 
-document.getElementById('closeModal').addEventListener('click', function() {
-  document.getElementById('modal').style.display = 'none';
-});
+    fetch(form.action, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      if (data.trim() === "OK") {
+        modal.style.display = 'block'; // показываем модальное окно
+        form.reset();
+      } else {
+        alert("Ошибка: " + data);
+      }
+    })
+    .catch(() => alert("Ошибка сети"));
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    location.reload(); // обновляем страницу при закрытии окна
+  });
