@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Интернет-магазин LevelUp</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="image/logo_1.ico" type="image/x-icon" />
+</head>
+<body class="body-top">
+  <header class="header">
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+          aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="main.html">Главная страница</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">Каталоги</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+          </ul>
+        </div>
+
+        <form class="d-flex me-2" role="search">
+          <input class="form1 form-control" type="search" placeholder="Поиск" aria-label="Поиск" />
+        </form>
+
+        <a class="navbar-brand mx-auto" href="main.html">LevelUp</a>
+
+        <ul class="navbar-nav d-flex flex-row align-items-center mb-2 mb-lg-0">
+          <li class="nav-item me-3">
+            <a class="nav-link" href="reg.html">Аккаунт</a></li>
+          <li class="nav-item cart-icon-container" role="button" aria-label="Корзина" tabindex="0"
+            onclick="alert('Перейти в корзину сейчас не реализовано')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .485.379L2.89 5H14.5a.5.5 0 0 1 .49.598l-1.5 
+              7A.5.5 0 0 1 13 13H4a.5.5 0 0 1-.491-.408L1.01 2H.5a.5.5 0 0 1-.5-.5zM5 
+              12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+            </svg>
+            <span class="cart-count" id="cartCount">0</span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <br>
+<!-- Обертка для центрирования -->
+<div class="banner-container">
+    <div class="promo-banner-dark" role="button" onclick="window.location.href='catalog.html'">
+        <span class="category-text">Экшен</span></div>
+    <div class="promo-banner-dark" role="button" onclick="window.location.href='sport.html'">
+        <span class="category-text">Спорт</span></div>
+    <div class="promo-banner-dark" role="button" onclick="window.location.href='shuter.html'">
+        <span class="category-text">Шутер</span></div>
+    <div class="promo-banner-dark" role="button" onclick="window.location.href='xorror.html'">
+        <span class="category-text">Хоррор</span></div>
+    <div class="promo-banner-dark" role="button" onclick="window.location.href='gonki.html'">
+        <span class="category-text">Гонки</span></div>
+    </div>
+</div>
+
+<!-- Контейнер с картинками -->
+<div class="images-container d-flex gap-3 my-4">
+  <!-- Первая картинка -->
+  <div class="image-item">
+    <img src="https://c.dns-shop.ru/thumb/st1/fit/320/250/1c49be53975d1b17425432896b3802a7/d50e7a2a9d4400b44bb4e6eb6801d998d8a98abb14bfe1704f341c10f97b5531.jpg" alt="Описание 1" class="img-fullscreen" data-bs-toggle="modal" data-bs-target="#modal1">
+    <p class="card-text">DOOM: The Dark Ages - Premium Edition </p>
+    <p class="card-text">8 589 ₽</p>
+  </div>
+  <!-- Вторая картинка -->
+  <div class="image-item">
+    <img src="https://c.dns-shop.ru/thumb/st1/fit/320/250/970134255a39ba4904f6136ea15e758d/cd1ddc6810b4927e95fdc12dd0078af0a635af0cee1cc49ac03d55b5e4bd26bb.jpg" alt="Описание 2" class="img-fullscreen" data-bs-toggle="modal" data-bs-target="#modal2">
+    <p class="card-text"> Call of Duty: Black Ops Cold War</p>
+    <p class="card-text">3 499 ₽</p>
+  </div>
+  <!-- Третья картинка -->
+  <div class="image-item">
+    <img src="https://c.dns-shop.ru/thumb/st4/fit/320/250/fd22f6b79af6134e8712cb0be3c8c91e/d515ac1051cba5a8e1a98ecf2939f2ab693e3a4b6e2a25ca44db9df52f962eb6.jpg" alt="Описание 3" class="img-fullscreen" data-bs-toggle="modal" data-bs-target="#modal3">
+    <p class="card-text">Cyberpunk 2077: Ultimate Edition </p>
+    <p class="card-text">4 699 ₽</p>
+  </div>
+</div>
+
+<!-- Модальные окна -->
+<!-- Модальное окно для первой картинки -->
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3 bg-dark text-white rounded-3">
+      <button type="button" class="btn-close align-self-end mb-2" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      <div class="d-flex flex-column align-items-center text-center">
+        <img src="https://c.dns-shop.ru/thumb/st1/fit/500/500/05a0cf481d284d231f08155385e9692c/d50e7a2a9d4400b44bb4e6eb6801d998d8a98abb14bfe1704f341c10f97b5531.jpg.webp" alt="Мини картинка 1" class="mb-3 rounded">
+        <p class="card-text">DOOM: The Dark Ages - Premium Edition </p>
+        <p class="card-text">4 299 ₽</p>
+        <p class="text-left">ОБ ИГРЕ</p>
+        <p>СТАНЬТЕ ПАЛАЧОМ В СРЕДНЕВЕКОВОЙ ВОЙНЕ С АДОМ. DOOM: The Dark Ages от студии id Software -
+           это зрелищное эпическое сказание о Палаче Рока и его ярости, которое поведает предысторию 
+           снискавших всемирную известность игр DOOM (2016) и DOOM Eternal. В третьей части этой серии
+            DOOM игроки вновь наденут броню Палача Рока и прольют реки крови в мрачной средневековой 
+            войне с силами ада, какой ещё не видели. ПУТЕШЕСТВИЕ ДЛЯ ЛЮБЫХ ПАЛАЧЕЙ. Это обновленная 
+            одиночная кампания в несравненной серии DOOM - на стыке научной фантастики и тёмного фэнтези.
+             Вас ждут яростные сражения и сногсшибательная графика на основе движка idTech последнего 
+             поколения. Благодаря гибкой настройке уровня сложности уверенно себя будут чувствовать и 
+             давние поклонники серии, и другие игроки. ПОКОРИТЕ АД. Рвите врагов в клочья, ведь вы - 
+             настоящее супероружие богов и царей. Для этой цели в вашем распоряжении окажутся не только 
+             классические средства, такие как супердробовик: вы сможете перемалывать кости врагам массой 
+             дополнительного оружия, в том числе универсальным щитом-пилой. Игрокам будут противостоять 
+             орды демонов - приготовьтесь к безжалостным сражениям в духе оригинальной DOOM. ИСТОРИЯ ВАШЕЙ
+              ЯРОСТИ. Узнайте об истоках ярости Палача Рока. Проживите историю обречённого быть супероружием 
+              в руках богов и царей. Палачу предстоит сдерживать натиск легионов ада и противостоять их главарю, 
+              цель которого - стать единственным существом в мире, чьё имя внушает страх, а значит, уничтожить
+               самого Палача. Вы увидите рождение легенды, сразитесь со всей армией преисподней и переломите 
+               ход войны. ОТКРОЙТЕ НЕИЗВЕДАННЫЕ МИРЫ. Чтобы сокрушить полчища ада, Палач должен обагрить кровью все
+                земли. Загадки, испытания и награды прячутся в тенистых уголках древних замков, на огромных полях 
+                сражений, в мрачных лесах, древних чертогах ада и иных мирах. Вооружившись мощным щитом-пилой, 
+                прорубите себе путь через тёмный мир тайн и опасностей, исследуя самые масштабные уровни в истории.</p>
+        <button class='btn btn-coral'>Купить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Аналогично для других модальных окон -->
+<div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class='modal-content p-3 bg-dark text-white rounded-3'>
+      <button type='button' class='btn-close align-self-end mb-2' data-bs-dismiss='modal' aria-label='Закрыть'></button>
+      <div class='d-flex flex-column align-items-center text-center'>
+        <img src='https://c.dns-shop.ru/thumb/st1/fit/320/250/970134255a39ba4904f6136ea15e758d/cd1ddc6810b4927e95fdc12dd0078af0a635af0cee1cc49ac03d55b5e4bd26bb.jpg' alt='Мини картинка 2' class='mb-3 rounded'>
+        <p class="card-text">Call of Duty: Black Ops Cold War</p>
+        <p class="card-text">3 499 ₽</p>
+        <p class="text-left">ОБ ИГРЕ</p>
+        <p>Действие игры Black Ops Cold War происходит в начале 1980-х годов - в один из напряженных периодов холодной войны. В ходе захватывающей кампании невиданных масштабов, рассчитанной на одного игрока, игрокам предстоит встречаться с историческими деятелями и узнавать жестокие истины, сражаясь в таких культовых местах, как Восточный Берлин, Вьетнам, Турция и даже штаб-квартира КГБ на Лубянке.
+Вместе с отрядом элитных исполнителей вы будете преследовать таинственного Персея, который стремится нарушить глобальный баланс сил и изменить ход истории. Раскрывать организованный им мировой заговор будут как ваши старые знакомые Вудс, Мейсон и Хадсон, так и целая группа сотрудников спецслужб.
+Помимо кампании, игроки смогут применять оружие и снаряжение времен холодной войны в сетевой игре и режиме "Зомби".</p>
+        <button class='btn btn-coral'>Купить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='modal fade' id='modal3' tabindex='-1' aria-labelledby='modalLabel3' aria-hidden='true'>
+  <div class='modal-dialog modal-dialog-centered'>
+    <div class='modal-content p-3 bg-dark text-white rounded-3'>
+      <button type='button' class='btn-close align-self-end mb-2' data-bs-dismiss='modal' aria-label='Закрыть'></button>
+      <div class='d-flex flex-column align-items-center text-center'>
+        <img src='https://c.dns-shop.ru/thumb/st4/fit/500/500/7226d1c821cb634469e8a61d64d97201/d515ac1051cba5a8e1a98ecf2939f2ab693e3a4b6e2a25ca44db9df52f962eb6.jpg.webp' alt='Мини картинка 3' class='mb-3 rounded'>
+        <p class="card-text">Cyberpunk 2077: Ultimate Edition </p>
+        <p class="card-text">4 699 ₽</p>
+        <p class="text-left">ОБ ИГРЕ</p>
+        <p>Cyberpunk 2077 — приключенческая ролевая игра с открытым миром, действие которой 
+          разворачивается в самом опасном городе мрачного будущего. Вместе с давно умершим
+           рокером Джонни Сильверхендом (в исполнении Киану Ривза) вы сможете стать легендой 
+           и раскрыть тайну уникального кибернетического импланта.
+«Призрачная свобода» — полноценное сюжетное дополнение для Cyberpunk 2077 в жанре шпионского 
+триллера. Освойте профессию секретного агента и вступите в политическую борьбу с далеко идущими 
+последствиями. С помощью спящего агента Соломона Рида (Идрис Эльба) распутайте клубок предательств
+ и сделайте всё возможное, чтобы выжить в захваченном боевиками Пёсьем городе.</p>
+        <button class='btn btn-coral'>Купить</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div><br>
+
+<!-- Footer Section -->
+    <footer class='footer pt-2'>
+      <br>
+        <div class='container'>
+            <!-- Колонки с пунктами (убраны пункты, оставлены слова) -->
+            <div class='row'>
+                <!-- Первая колонка -->
+                <div class='col-md-4 mb-3'>
+                    <ul class='list-unstyled'>
+                        <li>Sustainability</li>
+                        <li>Contact Us</li>
+                        <li>FAQ</li>
+                        <li>Careers</li>
+                    </ul>
+                </div>
+
+                <!-- Вторая колонка -->
+                <div class='col-md-4 mb-3'>
+                    <ul class='list-unstyled'>
+                        <li>Privacy Policy</li>
+                        <li>CA Privacy Rights</li>
+                        <li>Terms of Use</li>
+                        <li>Newsletter</li>
+                    </ul>
+                </div>
+
+                <!-- Третья колонка: форма отзывов -->
+                <div class='col-md-4 mb-3'>
+                    <!-- Форма отзыва -->
+                    <h3>Напишите свой отзыв</h3>
+                    <form id='feedbackForm' action='#'>
+                        <input type="text" name="review" class="form-control" placeholder="Введите ваш отзыв" required />
+                        <!-- Можно добавить параграф под формой, если нужно -->
+                        <p>Игры по дешевой цене</p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Вторая строка с копирайтом -->
+            <div class='row mt-3'>
+                <div class='col'>
+                    &copy;2025 dae. Все права защищены.
+                </div>
+            </div>
+        </div>
+  <!-- Подключение Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+  <!-- Подключение твоего скрипта -->
+  <script src="js/script.js"></script>
+</body>
+</html>

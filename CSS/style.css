@@ -7,6 +7,12 @@ body {
   color: white; /* белый текст по умолчанию */
 }
 
+.btn, .buy-btn, .btn-close{
+  background-color: #ff7f50;
+  border: 0;
+  color: white;
+}
+
 header .navbar-dark{
   background-color: #000 !important;
   color: #ff7f50;
@@ -143,7 +149,7 @@ footer{
 .card {
   transition: transform 0.4s;
   cursor: pointer;
-  background-color: #121212; /* темный фон для карточек */
+  background-color: #1E1E1E; /* темный фон для карточек */
   color: white;
 }
 
@@ -162,23 +168,18 @@ footer{
 .banner-container {
   display: flex;
   justify-content: center; /* Центрировать по горизонтали */
-  width: 100%; /* На всю ширину страницы */
   margin-top: 20px; /* Отступ сверху, чтобы было чуть ближе к верху */
-}
 
-/* Стиль для темной плашки */
-.promo-banner-dark {
   background-color: #1E1E1E; /* стандартная темная тема Bootstrap */
   padding: 15px;
   cursor: pointer;
   font-size: 1.2rem;
-   border-radius: 10px; /* скругление углов */
-   width: 800px; /* фиксированная ширина для урезания */
+  border-radius: 10px; /* скругление углов */
+  min-width: 50%; /* фиксированная ширина для урезания */
 
-  /* Центрирование содержимого внутри плашки */
+   /* Центрирование содержимого внутри плашки */
   display: flex;
   align-items: center;
-  justify-content: center;
 
   /* Для размещения слов в строку с пробелами */
   flex-wrap: nowrap;
