@@ -1,14 +1,34 @@
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Ribeye;
   margin: 0;
   padding: 0;
-  background-color: #202020; /* черный фон для всей страницы */
+  background-color: #111111; /* черный фон для всей страницы */
   color: white; /* белый текст по умолчанию */
 }
 
 header .navbar-dark{
   background-color: #000 !important;
+  color: #ff7f50;
+}
+
+.form1{
+  background-color: #1E1E1E;
+  color: #9d9d9d;
+  border: 0;
+  margin-left: 10px;
+  width: 360px;
+}
+
+@font-face {
+  font-family: 'MedievalSharp';
+  src: url('/css/MedievalSharp.ttf') format('truetype');
+}
+
+.navbar-brand{
+  font-family: MedievalSharp;
+  font-size: 28px;
+  margin-right: 100px;
 }
 
 .containerl{
@@ -61,7 +81,7 @@ footer{
 
 .modal-content {
   padding-top: 40px;
-  background-color: #000 !important;
+  background-color: #000000 !important;
   color: white !important;
 }
 
@@ -112,7 +132,7 @@ footer{
 
 /* Стиль для темной плашки */
 .promo-banner-dark {
-  background-color: #000; /* стандартная темная тема Bootstrap */
+  background-color: #1E1E1E; /* стандартная темная тема Bootstrap */
   padding: 15px;
   cursor: pointer;
   font-size: 1.2rem;
