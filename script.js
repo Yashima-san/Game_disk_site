@@ -89,3 +89,30 @@ window.addEventListener('DOMContentLoaded', () => {
   const defaultCategory = Object.keys(categoriesData)[0];
   showCategory(defaultCategory);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('feedbackForm');
+  const modal = new bootstrap.Modal(document.getElementById('feedbackModal'));
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // отменяем стандартную отправку
+
+    const formData = new FormData(form);
+
+    fetch('/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.status === 'success') {
+        modal.show();          // показываем модальное окно Bootstrap
+        form.reset();          // очищаем форму
+      } else {
+        alert('Ошибка: ' + data.message);
+      }
+    })
+    .catch(() => alert('Ошибка сети'));
+  });
+});
+

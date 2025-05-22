@@ -13,6 +13,14 @@ body {
   color: white;
 }
 
+.btn2{
+  border-color: #ff6347;
+  color: #ff7f50;
+  background-color: transparent;
+  border: 1;
+  width: 40%;
+}
+
 header .navbar-dark{
   background-color: #000 !important;
   color: #ff7f50;
@@ -28,10 +36,11 @@ header .navbar-dark{
 
 .form2{
   background-color: #000000;
-  color: #c7c7c7;
+  color: #ff7f50;
   border: 1;
   border-color: #ff7f50;
   border-radius: 0;
+  width: 90%;
 }
 
 .image-item{
