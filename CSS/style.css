@@ -20,6 +20,14 @@ header .navbar-dark{
   width: 360px;
 }
 
+.image-item{
+  background-color: #1E1E1E;
+  color: #ff7f50;
+  border-radius: 10px;
+  padding-top: 20px;
+  width: 380px;
+}
+
 @font-face {
   font-family: 'MedievalSharp';
   src: url('/css/MedievalSharp.ttf') format('truetype');
@@ -45,6 +53,20 @@ header .navbar-dark{
   margin-top: 20px; /* Отступ сверху для контейнера */
 }
 
+.images-container{
+  justify-content: center;
+}
+
+.image-item{
+  justify-content: center;
+  text-align: center;
+  width: 30%;
+}
+
+.image-item img{
+  border-radius: 5px;
+}
+
 /* Адаптация для маленьких экранов */
 @media (max-width: 768px) {
   /* Например, делаем блоки занимать всю ширину */
@@ -55,12 +77,26 @@ header .navbar-dark{
     align-self: center;
   }
   .containerb img{
-  margin-right: 160px;
+    margin-right: 160px;
   }
   img{
     max-width: 100%;
     height: auto;
   }
+
+  .images-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-item{
+    text-align: center;
+    width: 40%;
+  }
+  .image-item img{
+    min-width: 150px !important;
+    height: auto;
+  }
+
 }
 
 .containerb img {

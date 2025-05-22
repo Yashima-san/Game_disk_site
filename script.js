@@ -89,3 +89,29 @@ window.addEventListener('DOMContentLoaded', () => {
   const defaultCategory = Object.keys(categoriesData)[0];
   showCategory(defaultCategory);
 });
+
+document.getElementById('reviewForm').addEventListener('submit', function(e) {
+  e.preventDefault(); // Предотвращаем стандартную отправку формы
+
+  const reviewInput = this.querySelector('input[name="review"]');
+  const reviewText = reviewInput.value;
+
+  // Отправляем отзыв на сервер через fetch (AJAX)
+  fetch('/submit_review', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ review: reviewText })
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Обработка ответа сервера
+    alert('Отзыв успешно отправлен!');
+    reviewInput.value = ''; // Очистить поле после отправки
+  })
+  .catch(error => {
+    console.error('Ошибка:', error);
+    alert('Произошла ошибка при отправке отзыва.');
+  });
+});
