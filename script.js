@@ -1,25 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
   let cartCount = 0;
+  let preorderCount = 0; // счетчик "Предзаказов"
   const cartCountElem = document.getElementById('cartCount');
-  let preorderCount = 0; // Счётчик, сколько раз нажали на "Предзаказ" на карточке
 
-  // Счётчик покупок и логика подтверждения повторного заказа
-  document.querySelector('.buy-btn').addEventListener('click', () => {
+  // Обработчик для кнопки "Предзаказ"
+  const preorderBtn = document.querySelector('.buy-btn');
+  preorderBtn.addEventListener('click', () => {
     if (preorderCount > 0) {
-      // Показываем подтверждающее окно
       if (confirm('Вы уверены, что хотите ещё раз взять предзаказ?')) {
         preorderCount++;
         cartCount++;
         cartCountElem.textContent = cartCount;
-      } 
-      // Если пользователь нажал "Отмена" — ничего не делаем
+      }
     } else {
       preorderCount++;
       cartCount++;
       cartCountElem.textContent = cartCount;
     }
   });
+
+  // Обработчик для кнопки "Купить"
+  const buyBtns = document.querySelectorAll('.btn-coral');
+  buyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      cartCount++;
+      cartCountElem.textContent = cartCount;
+    });
+  });
 });
+
 
 // Данные по категориям и карточкам
 const categoriesData = {
